@@ -5,7 +5,6 @@ from matplotlib import pyplot as plt
 class PhanNguong: 
     def __init__(self, input = None, epsilon = 1):
         self.input = input
-        print(np.amin(input))
         self.epsilon = epsilon
         self.threshold = self.find_global_thresholding() 
         self.output = np.where(self.input > self.threshold[-1], 255, 0) 
@@ -67,6 +66,6 @@ class PhanNguong:
 
 
 if __name__ == "__main__": 
-    img= cv2.imread("test3.jfif", 0)  # reading image in gray scale
+    img= cv2.imread("test5.jfif", 0)  # reading image in gray scale
     res = PhanNguong(input = img, epsilon = 3)
-    res.plot2()
+    res.plot()
